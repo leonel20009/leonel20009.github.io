@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar/Ocultar Contraseña</title>
+    <style>
+        .password-container {
+            display: flex;
+            align-items: center;
+        }
+        .toggle-password {
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Inicio de Sesión</h2>
+    <div class="password-container">
+        <input type="password" id="password" placeholder="Contraseña">
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById("password");
+            const passwordToggle = document.querySelector(".toggle-password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                passwordToggle.textContent = "🙈";
+            } else {
+                passwordField.type = "password";
+                passwordToggle.textContent = "👁️";
+            }
+        }
+    </script>
+</body>
+</html>
